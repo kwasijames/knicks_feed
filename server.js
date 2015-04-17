@@ -100,11 +100,19 @@ app.post("/posts", function(req, res){
 });
 
 // Show individual micro posts
-app.get("/post/:id", function(req, res){
-	db.get("SELECT * FROM micro_posts WHERE id = ?", req.param.id, function(err, data){
-		console.log(data);
+app.get("/posts/:id", function(req, res){
+	db.get("SELECT * FROM micro_posts WHERE id = ?", req.params.id, function(err, data){
+		if(err){
+			console.log(err);
+		}
+		else{
+			var thisPost = data;
+		    console.log(thisPost);
+		    res.render("show.ejs", {thisPost: thisPost});
+		}
 	});
-})
+
+});
 
 
 
