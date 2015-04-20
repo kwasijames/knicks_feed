@@ -1,0 +1,6 @@
+SELECT
+	title,name,snippets.body
+	FROM
+	authors 
+	JOIN micro_posts ON micro_posts.author_id = authors.id
+	JOIN snippets ON micro_posts.snippet_id = snippets.id;

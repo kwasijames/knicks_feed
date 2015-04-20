@@ -1,0 +1,12 @@
+
+<% include head %>
+
+<h1><%=thisPost.title %> </h1>
+<p>By: <%= thisPost.name %> </p>
+<p> <%= thisPost.body %> </p>
+<!-- place snippets here and render on the index page -->
+<form action="/post/:id/" method="GET">
+	<input type="text" name="author" placeholder="author">
+	<button>Snippet</button>
+</form>
+<% include footer %>
