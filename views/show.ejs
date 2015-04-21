@@ -2,10 +2,14 @@
 <% include head %>
 
 <h1><%=thisPost.title %> </h1>
-<p>By: <%= thisPost.name %> </p>
+<p>By: <%= thisAuthor.name %> </p>
 <p> <%= thisPost.body %> </p>
+
+<!-- Edit Button -->
+<p><button><a href="/posts/<%= thisPost.id %> /edit">Edit</a></button></p>
+
 <!-- place snippets here and render on the index page -->
-<form action="/post/:id/" method="GET">
+<form action="/posts/<%= thisPost.id %> /" method="GET">
 	<input type="text" name="author" placeholder="author">
 	<button>Snippet</button>
 </form>

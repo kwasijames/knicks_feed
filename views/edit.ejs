@@ -1,0 +1,14 @@
+<% include head %>
+<form method="POST" action="/posts/<%= thisPost.id %>?_method=PUT">
+<p><textarea name="title"> <%= thisPost.title %>" </textarea></p>
+
+<p><textarea name="body"> <%= thisPost.body %> </textarea></p>
+<button>Submit</button>
+</form>
+
+<form method="POST" action="/posts/<%= thisPost.id %>?_method=DELETE">
+<p><button>Delete</button></p>
+</form>
+
+
+<% include footer %>
