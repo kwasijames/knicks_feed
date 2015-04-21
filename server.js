@@ -92,13 +92,13 @@ app.post("/posts", function(req, res){
 
 
 
-	  db.get("SELECT id FROM AUTHORS WHERE name =?", req.body.author, function(err, data){
+	  db.get("SELECT id FROM authors WHERE name =?", req.body.author, function(err, data){
    		if(err){
    			console.log(err);
    		}
    		else{
    			var author_id = data.id;
-   			//console.log(author_id);
+   			console.log(author_id);
    		}
 
    			   	db.run("INSERT INTO micro_posts(title, body, author_id) VALUES (?, ?, ?)", req.body.title, req.body.body, author_id, function(err){

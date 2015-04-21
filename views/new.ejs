@@ -2,7 +2,13 @@
 	<h1>CREATE A NEW MICRO_POST</h1>
 	<form action="/posts" method="POST">
 		<p><input type="text" name="title" placeholder="Title" required></p>
-		<p> <input type="text" name="author" placeholder="Author"></p>
+		<!-- Drop down menue with existing authors  -->
+		<select>
+			<% Object.keys(authors).forEach(function(key){ %>
+			<option name="author" value="<%= authors[key].name %> "> <%= authors[key].name %> <% }); %> </option> 
+			<option value="-">Other</option>
+		</select> 
+		<input type="text" name="author" placeholder="Author">
 		<p><textarea name="body" cols="50" row="60" placeholder="Write post.." required></textarea></p>
 		<button>Submit</button>
 	</form>
